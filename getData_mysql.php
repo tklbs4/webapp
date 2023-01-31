@@ -15,7 +15,7 @@
 
         $items[5] = password_hash($items[5], PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (username, password, firstname, lastname, birthdate, email, street, city, postcode, state, phone)
+        $sql = "INSERT INTO dbo.users (username, password, firstname, lastname, birthdate, email, street, city, postcode, state, phone)
         VALUES ('$items[0]', '$items[5]', '$items[1]', '$items[2]', '$items[3]', '$items[4]', '$items[6]', '$items[7]', '$items[8]', '$items[9]', '$items[10]')";
         sqlsrv_query($conn, $sql);
         echo ('Eintrag erfolgreich');
