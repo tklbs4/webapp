@@ -8,7 +8,7 @@
         );
         //Establishes the connection
         $conn = sqlsrv_connect($serverName, $connectionOptions);
-
+         echo ('conection erfolgreich');
         
         $items = ([$_POST["username"], $_POST["firstname"], $_POST["lastname"], $_POST["birthdate"], $_POST["email"], $_POST["password"], 
         $_POST["street"], $_POST["city"], $_POST["postcode"], $_POST["state"], $_POST["phonenumber"]]);
