@@ -1,0 +1,12 @@
+.about_us_text{
+    margin-top: 200px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+p{
+    display: inline-block;
+    text-align: center;
+}

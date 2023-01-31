@@ -1,0 +1,110 @@
+
+.car_sell{
+    width: 500px;
+    height: 500px;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(255, 255, 79);
+    margin-right: 100px;
+}
+
+.sells{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.buy_car{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy_buttons {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: inline-block;
+  margin-top: 10px;
+  width: 200px;
+  
+}
+
+.buy_buttons:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-buy_buttons 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-buy_buttons {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.buy_buttons:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.secret_button_div{
+    height: 50px;
+}
+
+.secret_button{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(250, 250, 216);
+    border: none;
+    font-size: 0%;
+}
+    
