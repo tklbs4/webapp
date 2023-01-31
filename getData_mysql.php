@@ -7,7 +7,7 @@
     
     try{
         $database = "FakeTaxi";  
-        $connection = new PDO( "sqlsrv:server=$server ; Database = $database", $username, $password);  
+        $connection = new PDO("dblib:version=8.0;charset=UTF-8;host={$server};dbname={$database}", $username, $password);  
         // EXCEPTION konfigurieren
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
