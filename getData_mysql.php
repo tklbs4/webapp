@@ -1,4 +1,5 @@
 <?php   
+    echo ('Eintrag erfolgreich prank');
     try{
         $serverName = "klettner.database.windows.net"; // update me
         $connectionOptions = array(
@@ -7,8 +8,9 @@
         "PWD" => "TelefonTelefon69!" // update me
         );
         //Establishes the connection
+        echo ('Eintrag erfolgreich prank vor connection');
         $conn = sqlsrv_connect($serverName, $connectionOptions);
-         echo ('conection erfolgreich');
+        echo ('conection erfolgreich');
         
         $items = ([$_POST["username"], $_POST["firstname"], $_POST["lastname"], $_POST["birthdate"], $_POST["email"], $_POST["password"], 
         $_POST["street"], $_POST["city"], $_POST["postcode"], $_POST["state"], $_POST["phonenumber"]]);
