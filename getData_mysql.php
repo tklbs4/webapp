@@ -1,13 +1,13 @@
 <?php 
-    $server = "localhost";
+    $server = "klettner.database.windows.net";
     $database = "faketaxi";
-    $username = "root";
-    $password = "";
+    $username = "thomas.klettner";
+    $password = "TelefonTelefon69!";
 
     
     try{
-        $connection = new PDO("mysql:host=$server;dbname=$database",$username, 
-        $password);
+        $database = "FakeTaxi";  
+        $connection = new PDO( "sqlsrv:server=$server ; Database = $database", $username, $password);  
         // EXCEPTION konfigurieren
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
