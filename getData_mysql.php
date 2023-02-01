@@ -12,6 +12,49 @@
         $conn = sqlsrv_connect($serverName, $connectionOptions);
         echo ('conection erfolgreich');
         
+        $username = $_POST["username"];
+        $firstname = $_POST["firstname"];
+        $lastname = $_POST["lastname"];
+        $birthdate = $_POST["birthdate"];
+        $email = $_POST["email"];
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $street = $_POST["street"];
+        $city = $_POST["city"];
+        $postcode = $_POST["postcode"];
+        $state = $_POST["state"];
+        $phonenumber = $_POST["phonenumber"];
+
+        $stmt = sqlsrv_prepare($conn, "INSERT INTO dbo.users (username, password, firstname, lastname, birthdate, email, street, city, postcode, state, phone)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [$username, $password, $firstname, $lastname, $birthdate, $email, $street, $city, $postcode, $state, $phonenumber]);
+        if(!sqlsrv_execute($stmt)){
+            throw new Exception(print_r(sqlsrv_errors(), true));
+        }
+        echo ('Eintrag erfolgreich');
+    }
+    catch(Exception $e)
+    {
+        echo ( 'Fehler: ' . $e->getMessage());
+    }
+    $conn = null;
+       
+    header("Location: website_example.php");
+?>
+
+
+<?php   
+    /*echo ('Eintrag erfolgreich prank');
+    try{
+        $serverName = "klettner.database.windows.net"; // update me
+        $connectionOptions = array(
+        "Database" => "FakeTaxi", // update me
+        "Uid" => "thomas.klettner", // update me
+        "PWD" => "TelefonTelefon69!" // update me
+        );
+        //Establishes the connection
+        echo ('Eintrag erfolgreich prank vor connection');
+        $conn = sqlsrv_connect($serverName, $connectionOptions);
+        echo ('conection erfolgreich');
+        
         $items = ([$_POST["username"], $_POST["firstname"], $_POST["lastname"], $_POST["birthdate"], $_POST["email"], $_POST["password"], 
         $_POST["street"], $_POST["city"], $_POST["postcode"], $_POST["state"], $_POST["phonenumber"]]);
 
@@ -29,4 +72,5 @@
     $conn = null;
        
     header("Location: website_example.php");
+    */
 ?>
