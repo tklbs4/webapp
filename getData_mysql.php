@@ -26,7 +26,9 @@
 
         $stmt = sqlsrv_prepare($conn, "INSERT INTO dbo.users (username, password, firstname, lastname, birthdate, email, street, city, postcode, state, phone)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [$username, $password, $firstname, $lastname, $birthdate, $email, $street, $city, $postcode, $state, $phonenumber]);
+        echo("vor eintrag");
         if(!sqlsrv_execute($stmt)){
+            echo("in if");
             throw new Exception(print_r(sqlsrv_errors(), true));
         }
         echo ('Eintrag erfolgreich');
