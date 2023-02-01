@@ -24,6 +24,7 @@
         $state = $_POST["state"];
         $phonenumber = $_POST["phonenumber"];
 
+        echo("After post")
         $stmt = sqlsrv_prepare($conn, "INSERT INTO dbo.users (username, password, firstname, lastname, birthdate, email, street, city, postcode, state, phone)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [$username, $password, $firstname, $lastname, $birthdate, $email, $street, $city, $postcode, $state, $phonenumber]);
         echo("vor eintrag");
